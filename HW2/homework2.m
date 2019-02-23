@@ -1,6 +1,6 @@
 % % MATH 151A HOMEWORK 2
 % % QUESTION 4
-% % Wang, Zheng (404855295)
+% % Wang, Zheng
 % % Results are recorded in homework2.pdf
 
 %% (a) plot the graph

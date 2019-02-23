@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.25)  22 JAN 2019 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.25)  23 FEB 2019 00:30
 entering extended mode
 **./homework1.tex
 (homework1.tex
@@ -656,7 +656,7 @@ Overfull \hbox (34.76112pt too wide) in paragraph at lines 229--229
 Here is how much of TeX's memory you used:
  13059 strings out of 493308
  238954 string characters out of 3138751
- 297003 words of memory out of 3000000
+ 296991 words of memory out of 3000000
  16476 multiletter control sequences out of 15000+200000
  538190 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -676,7 +676,7 @@ gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on homework1.pdf (8 pages, 219226 bytes).
+Output written on homework1.pdf (8 pages, 218712 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

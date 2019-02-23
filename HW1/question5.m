@@ -1,6 +1,6 @@
 % % MATH 151A HOMEWORK1 
 % % QUESTION 5
-% % Wang, Zheng (404855295)
+% % Wang, Zheng
 % % Results are recorded in homework1.pdf
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

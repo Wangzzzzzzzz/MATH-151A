@@ -1,6 +1,6 @@
 % MATH 151A 
 % Homework 3, Question
-% Wang, Zheng (404855295)
+% Wang, Zheng 
 
 %% input vector:
 x = input('Please input a vector of x_i (e.g. [1 2 3]):\n');

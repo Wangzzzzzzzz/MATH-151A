@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.25)  8 FEB 2019 00:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.25)  23 FEB 2019 00:31
 entering extended mode
 **./homework2.tex
 (homework2.tex
@@ -609,7 +609,7 @@ Package pdftex.def Info: g_n_seq.png  used on input line 112.
 Here is how much of TeX's memory you used:
  13063 strings out of 493308
  239047 string characters out of 3138751
- 300003 words of memory out of 3000000
+ 299991 words of memory out of 3000000
  16479 multiletter control sequences out of 15000+200000
  538191 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -630,7 +630,7 @@ msfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pf
 b>
-Output written on homework2.pdf (7 pages, 252830 bytes).
+Output written on homework2.pdf (7 pages, 251724 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
