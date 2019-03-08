@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{xparse}
+\newcommand*{\boxtex}[1]{\framebox{#1}}
+\newcommand{\cnum}{CM146}
+\newcommand{\ced}{Fall 2018}
+\newcommand{\ctitle}[3]{\title{\vspace{-0.5in}\cnum, \ced\\Problem Set #1: #2}}
+\newcommand{\solution}[1]{{{\color{blue}{\bf Solution:} {#1}}}}
+\NewDocumentCommand{\texcod}{mm}{%
+	\texttt{\textcolor{#1}{#2}}%
+}
+\usepackage[usenames,dvipsnames,svgnames,table,hyperref]{xcolor}
+
+\renewcommand*{\theenumi}{\alph{enumi}}
+\renewcommand*\labelenumi{(\theenumi)}
+\renewcommand*{\theenumii}{\roman{enumii}}
+\renewcommand*\labelenumii{\theenumii.}
+
+\author{Zheng Wang (404855295)}
+\date{\today}
+\title{MATH 151A Homework 3}
+
+\begin{document}
+\maketitle
+
+
+\section*{Question 1}
+\begin{itemize}
+	\item [(a)]
+	The Lagrange interpolation is the following:
+	\begin{equation*}
+	\begin{aligned}
+	h(x) &= f(x_0)\frac{x(x-1)}{x_0(x_0-1)} + f(x_1)\frac{(x+1)(x-1)}{(x_1+1)(x_1-1)} + f(x_2)\frac{x(x+1)}{(x_2+1)x_2}\\
+	&=\frac{f(-1)}{2}\cdot (x^2-x) - f(0)\cdot (x^2-1) + \frac{f(1)}{2}\cdot (x^2+x)
+	\end{aligned}
+	\end{equation*}
+	
+	\item [(b)]
+	The error term is given by the following:
+	\[ E(x) = \frac{f'''(\xi(x))}{3!}(x-x_0)(x-x_1)(x-x_2) = \frac{f'''(\xi(x))}{6}x(x+1)(x-1)  \]
+	
+	\item [(c)]
+	The result of the integral are as follows:
+	\begin{equation*}
+	\begin{aligned}
+	\int_{-1}^{1}h(x) dx &= \int_{-1}^{1} \frac{f(-1)}{2}\cdot (x^2-x) - f(0)\cdot (x^2-1) + \frac{f(1)}{2}\cdot (x^2+x)\\
+	&= \frac{f(-1)}{2}\cdot\frac{2}{3} + f(0)\cdot\frac{4}{3} + \frac{f(1)}{2}\cdot\frac{2}{3}\\
+	&=\frac{1}{3}\cdot f(-1) + \frac{4}{3}\cdot f(0) + \frac{1}{3}\cdot f(1)
+	\end{aligned}
+	\end{equation*}
+	
+	\item[(d)]
+	The statement is true and the result will be exact. This is because if $ f(x) $ is a polynomial of degree less than or equal to 2, then we have $ f'''(x)=0\quad \forall x\in \mathbb{R} $. Thus $ E(x) = 0 \quad \forall x \in \mathbb{R} $
+	Then we have the following:
+	\[ \int_{-1}^{1} f(x) dx = \int_{-1}^{1} [h(x) + E(x)] dx = \int_{-1}^{1} h(x) dx \]
+	Thus, the result will be exact. \hfill $ \blacksquare $
+	
+	\item [(e)]
+	The error term is given by:
+	\[ \text{Error} = \int_{-1}^{1} f(x)-h(x) dx = \int_{-1}^{1} E(x) dx = \int_{-1}^{1} \frac{f'''(\xi(x))}{6}x(x+1)(x-1) dx \]
+	NOTE: here the function $ g(x) = x(x+1)(x-1) $ changes sign in the interval $ [-1,1] $, so Weighted Mean Value Theorem for Integrals cannot be used to further simplify.\pagebreak
+\end{itemize}
+
+\section*{Question 2}
+\begin{itemize}
+	\item [(a)]
+	Here we take $ x_0 = 0 $, $ x_1  = 2$, and $ x_2  = 4$; $ h = 2 $. By simply apply the Simpson's Rule, we have:
+	\[ \int_{0}^{4} f(x) \approx \frac{2}{3}[f(0) + 4f(2) + f(4)] = 4 \]
+	Thus, the estimated integral is \boxtex{$ \int_{0}^{4}f(x)dx \approx 4 $}.
+	
+	\item [(b)]
+	Here we are using the composite Simpson's Rule, we have the following:
+	\begin{equation*}
+	\begin{aligned}
+	\int_{0}^{4} f(x) dx &= \int_{0}^{2} f(x) dx + \int_{2}^{4} f(x) dx\\
+	&\approx \frac{1}{3}[f(0) + 4\cdot f(1) + f(2)] + \frac{1}{3}[f(2) + 4\cdot f(3) + f(4)]\\
+	&= \frac{10}{3} + \frac{10}{3}\\
+	&=\frac{20}{3}
+	\end{aligned}
+	\end{equation*}
+	Thus, the estimated integral is \boxtex{$ \int_{0}^{4}f(x)dx \approx \frac{20}{3} $}.
+	
+\section*{Question 3 (Coding)}
+\begin{itemize}
+	\item [(a)]
+	The program can be find in file "\textbf{hw4\_5\_trape.m}".
+	\item [(b)]
+	The program can be find in file "\textbf{hw4\_5\_Simps.m}".
+\end{itemize}	
+	The code for part (a) is the following:
+	\begin{verbatim}
+	% Math 151A
+	% Homework 4
+	% Question 3(a)
+	% Wang, Zheng (404855295)
+	
+	%% input N
+	N = input('Please input the number of subintervals, N:');
+	
+	%% calculate the output
+	fprintf('Estimating by Composite Trapezoidal Rule...\n')
+	fprintf('Integral of cos(x) from 0 to pi is%12.8f\n',compos_Trape(N))
+	
+	%% useful functions
+	function fx = f(x)
+	    fx = cos(x);
+	end
+	
+	function res=compos_Trape(N)
+	    a = 0;
+	    b = pi;
+    	h = (b-a)/N;
+	    fa = f(a);
+	    fb = f(b);
+	    fo = 0;
+	    for j=1:(N-1)
+	       fo = fo + 2*f(a+j*h);
+	    end
+	    res = h*(fo+fa+fb)/2;
+	end
+	\end{verbatim}
+	\hfill\\
+	The code for part (b) is the following:
+	\begin{verbatim}
+	% Math 151A
+	% Homework 4
+	% Question 3(b)
+	% Wang, Zheng (404855295)
+	
+	%% input N
+	N = input('Please input the number of subintervals, N:');
+	if mod(N,2) ~= 0
+	error('To use Composite Simpson''s Rule, N must be even.')
+	end
+	
+	%% calculate the output
+	fprintf('Estimating by Composite Simpson''s Rule...\n')
+	fprintf('Integral of cos(x) from 0 to pi is %12.12f\n',compos_Simps(N))
+	
+	%% useful functions
+	
+	function fx = f(x)
+	    fx = cos(x);
+	end
+	
+	function res=compos_Simps(N)
+	    a = 0;
+	    b = pi;
+	    h = (b-a)/N;
+	    f_t = 0;
+	    for j=1:(N/2)
+	        f_t = f_t + ( f(a+(2*j-2)*h) + 4*f(a+(2*j-1)*h) + f(a+(2*j)*h) );
+	    end
+	    res = h*f_t/3;
+	end
+	\end{verbatim}
+
+	
+\end{itemize}
+
+\end{document}
