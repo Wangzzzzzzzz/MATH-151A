@@ -1,7 +1,7 @@
 % Math 151A
 % Homework 4
 % Question 3(a)
-% Wang, Zheng (404855295)
+% Wang, Zheng
 %% input N
 N = input('Please input the number of subintervals, N:');
 
@@ -26,4 +26,3 @@ function res=compos_Trape(N)
     end
     res = h*(fo+fa+fb)/2;
 end
-    

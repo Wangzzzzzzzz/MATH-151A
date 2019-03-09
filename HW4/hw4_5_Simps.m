@@ -1,7 +1,7 @@
 % Math 151A
 % Homework 4
 % Question 3(a)
-% Wang, Zheng (404855295)
+% Wang, Zheng
 %% input N
 N = input('Please input the number of subintervals, N:');
 if mod(N,2) ~= 0
