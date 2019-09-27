@@ -6,4 +6,4 @@ Math 151A Winter 2019 By Wuchen Li
 | HW1 | 20/20 |
 | HW2 | 20/20 |
 | HW3 | 20/20 |
-| HW4 | |
+| HW4 | 20/20 |
